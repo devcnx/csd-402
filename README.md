@@ -2,5 +2,9 @@
 
 ## Contributors
 
+- **Author**: Brittaney Perry-Morgan
+- **Date**: 2025-08-17
 - **Instructor**: Jack Lusby
-- **Self**: Brittaney Perry-Morgan
+
+## Description
+
