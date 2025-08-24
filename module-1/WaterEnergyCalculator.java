@@ -19,17 +19,17 @@ public class WaterEnergyCalculator {
     public static void main(String[] args) {
         while (true) {
             //  --- 1. Get the user's input.
-            double waterMass = 0;
-            double initialTemp = 0;
-            double finalTemp = 0;
+            double waterMassKg = 0;
+            double initialTemperatureCelsius = 0;
+            double finalTemperatureCelsius = 0;
             
             // Get water mass with validation
             while (true) {
                 try {
-                    String waterMassString = JOptionPane.showInputDialog(
+                    String waterMassInput = JOptionPane.showInputDialog(
                         "Enter the Amount of Water (in Kilograms): ");
-                    if (waterMassString == null) return; // User clicked cancel
-                    waterMass = Double.parseDouble(waterMassString);
+                    if (waterMassInput == null) return; // User clicked cancel
+                    waterMassKg = Double.parseDouble(waterMassInput);
                     break;
                 } catch (NumberFormatException e) {
                     JOptionPane.showMessageDialog(null, "Please Enter a Valid Number for Water Mass.");
@@ -39,10 +39,10 @@ public class WaterEnergyCalculator {
             // Get initial temperature with validation
             while (true) {
                 try {
-                    String initialTempString = JOptionPane.showInputDialog(
+                    String initialTemperatureInput = JOptionPane.showInputDialog(
                         "Enter the Initial Temperature (in Celsius): ");
-                    if (initialTempString == null) return; // User clicked cancel
-                    initialTemp = Double.parseDouble(initialTempString);
+                    if (initialTemperatureInput == null) return; // User clicked cancel
+                    initialTemperatureCelsius = Double.parseDouble(initialTemperatureInput);
                     break;
                 } catch (NumberFormatException e) {
                     JOptionPane.showMessageDialog(null, "Please Enter a Valid Number for Initial Temperature.");
@@ -52,10 +52,10 @@ public class WaterEnergyCalculator {
             // Get final temperature with validation
             while (true) {
                 try {
-                    String finalTempString = JOptionPane.showInputDialog(
+                    String finalTemperatureInput = JOptionPane.showInputDialog(
                         "Enter the Final Temperature (in Celsius): ");
-                    if (finalTempString == null) return; // User clicked cancel
-                    finalTemp = Double.parseDouble(finalTempString);
+                    if (finalTemperatureInput == null) return; // User clicked cancel
+                    finalTemperatureCelsius = Double.parseDouble(finalTemperatureInput);
                     break;
                 } catch (NumberFormatException e) {
                     JOptionPane.showMessageDialog(null, "Please Enter a Valid Number for Final Temperature.");
@@ -64,18 +64,19 @@ public class WaterEnergyCalculator {
             
             // Calculate energy (Q = m * c * ΔT)
             // c = specific heat capacity of water = 4184 J/kg°C
-            final double SPECIFIC_HEAT_WATER = 4184.0;
-            double energy = waterMass * SPECIFIC_HEAT_WATER * (finalTemp - initialTemp);
+            final double SPECIFIC_HEAT_CAPACITY_WATER_J_PER_KG_C = 4184.0;
+            double requiredEnergyJoules = waterMassKg * SPECIFIC_HEAT_CAPACITY_WATER_J_PER_KG_C * (finalTemperatureCelsius - initialTemperatureCelsius);
             
             // Display result
             JOptionPane.showMessageDialog(null, 
-                String.format("The Energy Needed is: %,.2f Joules", energy));
+                String.format("The Energy Needed is: %,.2f Joules", requiredEnergyJoules));
                 
             // Ask user if they want to perform another calculation
-            int response = JOptionPane.showConfirmDialog(null, "Would you like to perform another calculation?", "Continue", JOptionPane.YES_NO_OPTION);
-            if (response != JOptionPane.YES_OPTION) {
+            int userContinueResponse = JOptionPane.showConfirmDialog(null, "Would you like to perform another calculation?", "Continue", JOptionPane.YES_NO_OPTION);
+            if (userContinueResponse != JOptionPane.YES_OPTION) {
                 break; // Exit the loop if user chooses No or closes the dialog
             }
         }
     }
-}   
+}
+   
