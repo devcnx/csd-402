@@ -1,19 +1,21 @@
 /**
+ * This program calculates the energy required to heat a given mass of water
+ * from an initial temperature to a final temperature using the formula:
+ * Energy = mass × specific heat × temperature change
+ * 
+ * @author Brittaney Perry-Morgan
+ * @version 1.0
+ * @since 2025-08-17
+ * 
  * Course: CSD402 Java for Programmers
  * Assignment: M1 Programming Assignment (Water Energy Calculator)
- * Author: Brittaney Perry-Morgan
- * Date: 2025-08-17
- * Description: This program calculates the energy required to heat a given mass of  water
- * from an initial temperature to a final temperature.
  */
 
-//  Import the JOptionPane class for creating user dialog boxes.
-import javax.swing.JOptionPane;
+import javax.swing.JOptionPane; // Import the JOptionPane class for creating user dialog boxes
 
 /**
  * Representation of a Water Energy Calculator.
- * 
- * This public class WaterEnergyCalculator implements a simple command-line interface
+ * This class implements a GUI-based interface using JOptionPane for user interaction.
  */
 public class WaterEnergyCalculator {
     public static void main(String[] args) {
@@ -79,4 +81,3 @@ public class WaterEnergyCalculator {
         }
     }
 }
-   
