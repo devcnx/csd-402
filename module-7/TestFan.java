@@ -35,5 +35,22 @@ public class TestFan {
         customFan.setColor("blue");
 
         customFan.displayFanDetails();
+
+        // 4. Edge case for invalid speed
+        System.out.println("Test 4: Edge Case - Invalid Speed");
+        Fan edgeFan = new Fan(99, true, 6.0, "gray");
+        edgeFan.displayFanDetails();
+
+        // 5. Multiple fan instances
+        System.out.println("Test 5: Multiple Fans");
+        Fan fan1 = new Fan(Fan.SLOW, true, 5.0, "blue");
+        Fan fan2 = new Fan(Fan.FAST, false, 4.0, "orange");
+        Fan fan3 = new Fan(Fan.MEDIUM, true, 20.0, "yellow");
+
+        fan1.displayFanDetails();
+        fan2.displayFanDetails();
+        fan3.displayFanDetails();
+
+        System.out.println("===== End of Fan Class Tests.");
     }
 }
