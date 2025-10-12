@@ -15,7 +15,7 @@ public class Fan {
     public static final int MEDIUM = 2;
     public static final int FAST = 3;
 
-    // Private instance variables.
+    // Private fields
     private int speed;
     private boolean on;
     private double radius;
