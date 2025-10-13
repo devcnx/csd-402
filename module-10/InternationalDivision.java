@@ -24,6 +24,12 @@ public class InternationalDivision extends Division {
     public InternationalDivision(String divisionName, int accountNumber,
             String country, String language) {
         super(divisionName, accountNumber);
+        if (country == null || country.trim().isEmpty()) {
+            throw new IllegalArgumentException("Country cannot be null or empty");
+        }
+        if (language == null || language.trim().isEmpty()) {
+            throw new IllegalArgumentException("Language cannot be null or empty");
+        }
         this.country = country;
         this.language = language;
     }

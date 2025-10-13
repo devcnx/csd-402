@@ -21,6 +21,9 @@ public class DomesticDivision extends Division {
      */
     public DomesticDivision(String divisionName, int accountNumber, String state) {
         super(divisionName, accountNumber);
+        if (state == null || state.trim().isEmpty()) {
+            throw new IllegalArgumentException("State cannot be null or empty");
+        }
         this.state = state;
     }
 

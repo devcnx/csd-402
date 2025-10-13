@@ -10,7 +10,7 @@
  * @version 1.0
  */
 public abstract class Division {
-    // Changed to protected for better encapsulation
+    // Protected for better encapsulation
     protected String divisionName;
     protected int accountNumber;
 
@@ -21,6 +21,12 @@ public abstract class Division {
      * @param accountNumber The account number for the division
      */
     public Division(String divisionName, int accountNumber) {
+        if (divisionName == null || divisionName.trim().isEmpty()) {
+            throw new IllegalArgumentException("Division name cannot be null or empty");
+        }
+        if (accountNumber < 0) {
+            throw new IllegalArgumentException("Account number cannot be negative");
+        }
         this.divisionName = divisionName;
         this.accountNumber = accountNumber;
     }
@@ -30,12 +36,12 @@ public abstract class Division {
      * Must be implemented by subclasses.
      */
     public abstract void display();
-    
+
     // Getters for subclasses to access the fields
     public String getDivisionName() {
         return divisionName;
     }
-    
+
     public int getAccountNumber() {
         return accountNumber;
     }
