@@ -2,8 +2,7 @@
 /**
  * Program 2: File I/O
  * 
- * Demonstration of file I/O using a Scanner to read a file and a PrintWriter to
- * write to a file.
+ * Documentation and testing harness for FileIOProgram.java.
  * 
  * Course: CSD402 Java for Programmers
  * Assignment: M9 Programming Assignment
@@ -11,7 +10,7 @@
  * @author Brittaney Perry-Morgan
  * @version 1.0
  *
- * NOTE:Since FileIOProgram.java directly manipulates a file and prints to the console,
+ * NOTE: Since FileIOProgram.java directly manipulates a file and prints to the console,
 *the testing process must be executed by running the primary application multiple times.*/
 
 import java.io.File;
